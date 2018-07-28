@@ -4,7 +4,9 @@
   "description": "A simple note taking app to practice building APIs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:coverage": "LOG_LEVEL=FATAL istanbul cover node_modules/.bin/_mocha ./tests/unit/*",
+    "lint": "./node_modules/.bin/eslint ."
   },
   "dependencies": {
     "ajv": "^6.5.2",
@@ -12,7 +14,6 @@
     "bunyan": "^1.8.12",
     "express": "^4.16.3",
     "knex": "^0.15.2",
-    "nodemon": "^1.18.3",
     "pg": "^7.4.3",
     "uuid": "^3.3.2"
   },
