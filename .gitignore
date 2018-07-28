@@ -1,0 +1,9 @@
+node_modules*
+builds*
+terraform/.terraform*
+terraform/*.tfvars
+terraforn/*.tfstate*
+.env.json
+.vscode
+.DS_STORE
+coverage

@@ -1,0 +1,37 @@
+{
+  "name": "noteapp",
+  "version": "1.0.0",
+  "description": "A simple note taking app to practice building APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ajv": "^6.5.2",
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "express": "^4.16.3",
+    "knex": "^0.15.2",
+    "nodemon": "^1.18.3",
+    "pg": "^7.4.3",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.11.0",
+    "faker": "^4.1.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.2.0",
+    "mock-knex": "^0.4.0",
+    "rewire": "^4.0.1",
+    "sinon": "^4.5.0",
+    "sinon-chai": "^2.14.0",
+    "cucumber": "^4.2.1",
+    "supertest": "^3.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
