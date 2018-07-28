@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:feature": "LOG_LEVEL=FATAL ./node_modules/.bin/cucumber-js --exit ./tests/features/*",
     "test:coverage": "LOG_LEVEL=FATAL istanbul cover node_modules/.bin/_mocha ./tests/unit/*",
     "lint": "./node_modules/.bin/eslint ."
   },
@@ -20,6 +21,8 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.0.0",
+    "cucumber": "^4.2.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^11.3.2",
     "eslint-plugin-import": "^2.11.0",
@@ -29,9 +32,7 @@
     "mock-knex": "^0.4.0",
     "rewire": "^4.0.1",
     "sinon": "^4.5.0",
-    "sinon-chai": "^2.14.0",
-    "cucumber": "^4.2.1",
-    "supertest": "^3.0.0"
+    "sinon-chai": "^2.14.0"
   },
   "author": "",
   "license": "ISC"

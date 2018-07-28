@@ -5,11 +5,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/hello', (req, res) => {
-  res.status(200).send('Hello world!');
+app.get('/', (req, res) => {
+  res.redirect('/ping');
 });
 
-module.exports = {
-  run: () => app.listen(3000),
-  app
-};
+app.get('/ping', (req, res) => {
+  res.status(200).json({ ping: 'Hello world!' });
+});
+
+module.exports = app.listen(3000);

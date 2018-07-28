@@ -1,6 +1,9 @@
 const { setWorldConstructor } = require('cucumber');
-const request = require('supertest');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
 const app = require('../../../src');
+
+chai.use(chaiHttp);
 
 class ApiAdapter {
   constructor() {
@@ -9,10 +12,23 @@ class ApiAdapter {
 
   async postRequest({ resource, payload }) {
     try {
-      this.req = await request(app)
+      this.req = await chai.request(app)
         .post(`${this.url}/${resource}`)
         .set('Content-Type', 'application/json')
         .send(payload)
+        .then(response => response);
+      return this.req;
+    } catch (err) {
+      return err;
+    }
+  }
+
+  async getRequest({ resource, queryParams }) {
+    try {
+      this.req = await chai.request(app)
+        .get(`/${resource}`)
+        .query(queryParams)
+        .set('Content-Type', 'application/json')
         .then(response => response);
       return this.req;
     } catch (err) {
@@ -28,6 +44,10 @@ class CustomWorld {
 
   async createResource({ resource, payload }) {
     return this.adapter.postRequest({ resource, payload });
+  }
+
+  async getResource({ resource, queryParams = null }) {
+    return this.adapter.getRequest({ resource, queryParams });
   }
 }
 
