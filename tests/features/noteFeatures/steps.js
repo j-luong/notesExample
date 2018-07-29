@@ -7,7 +7,7 @@ Given('I have a subject {string}', async function (subject) {
   this.subject = subject;
 });
 
-Given('I have a body {string}', async function (body) {
+Given('I have body {string}', async function (body) {
   this.body = body;
 });
 

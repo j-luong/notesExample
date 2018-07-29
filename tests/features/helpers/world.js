@@ -14,7 +14,7 @@ class ApiAdapter {
   async postRequest({ resource, payload }) {
     try {
       this.req = await chai.request(app)
-        .post(`${this.url}/${resource}`)
+        .post(`/${resource}`)
         .set('Content-Type', 'application/json')
         .send(payload)
         .then(response => response);
