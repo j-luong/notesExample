@@ -13,4 +13,4 @@ app.get('/ping', (req, res) => {
   res.status(200).json({ ping: 'Hello world!' });
 });
 
-module.exports = app.listen(3000);
+module.exports = app;

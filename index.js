@@ -1,3 +1,4 @@
 const app = require('./src');
+const config = require('./src/config');
 
-app.listen(3000);
+app.listen(config.express.port);

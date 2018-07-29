@@ -2,12 +2,13 @@ const { setWorldConstructor } = require('cucumber');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = require('../../../src');
+const config = require('../../../src/config');
 
 chai.use(chaiHttp);
 
 class ApiAdapter {
   constructor() {
-    this.url = process.env.targetURL || 'http://localhost:3000';
+    this.url = process.env.targetURL || `http://localhost:${config.express.port}`;
   }
 
   async postRequest({ resource, payload }) {
