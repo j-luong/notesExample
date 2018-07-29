@@ -43,8 +43,9 @@ class CustomWorld {
     this.adapter = new ApiAdapter();
   }
 
-  async createResource({ resource, payload }) {
-    return this.adapter.postRequest({ resource, payload });
+  async createNote({ subject, body }) {
+    const payload = { subject, body };
+    return this.adapter.postRequest({ resource: 'notes', payload });
   }
 
   async getResource({ resource, queryParams = null }) {
