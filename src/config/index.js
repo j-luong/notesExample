@@ -3,7 +3,7 @@ module.exports = {
     port: parseInt(process.env.EXPRESS_PORT, 10) || 3000
   },
   database: {
-    // defines the connection details for the PostgreSQL/CockroachDB
+    // defines the connection details for PostgreSQL
     name: process.env.DATABASE_NAME || 'notes',
     host: process.env.DATABASE_HOST || 'localhost',
     port: parseInt(process.env.DATABASE_PORT, 10) || 26257,

@@ -72,7 +72,7 @@ class DBAdapter {
       if (!deletedCount) {
         throw new ResourceNotFoundError();
       }
-      return null;
+      return deletedCount;
     } catch (e) {
       throw ErrorChecker.getDbError(e);
     }
