@@ -1,15 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const routers = require('./routers');
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/hello', (req, res) => {
-  res.status(200).send('Hello world!');
-});
+app.use('/', routers.status);
+app.use('/notes', routers.notes);
 
-module.exports = {
-  run: () => app.listen(3000),
-  app
-};
+module.exports = app;

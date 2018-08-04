@@ -9,7 +9,8 @@
       "never"
     ],
     "no-underscore-dangle" : "off",
-    "strict": "off"
+    "strict": "off",
+    "linebreak-style": "off"
   },
   "env": {
     "browser": false,
